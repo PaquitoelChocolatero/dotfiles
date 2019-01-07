@@ -92,13 +92,14 @@ bindsym $mod+a focus parent
 set $workspace1 "1: Home "
 set $workspace2 "2: Spotify "
 set $workspace3 "3: Proxectos "
-set $workspace9 "9: Games"
+set $workspace4 "4: Study "
+set $workspace9 "9: Games "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -110,7 +111,7 @@ bindsym $mod+0 workspace 10
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -144,7 +145,7 @@ set $bg-color 	         #007a99
 set $inactive-bg-color   #007a99
 set $text-color          #ffffff
 set $inactive-text-color #000000
-set $urgent-bg-color     #ff4d88
+set $urgent-bg-color     #66e0ff
 
 # window colors
 #                       border              background         text                 indicator
