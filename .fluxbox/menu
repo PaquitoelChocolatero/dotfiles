@@ -1,0 +1,116 @@
+[begin] (FluxBox)
+    [submenu] (Development)
+        [exec] (IDLE [Python IDE]) {idle}
+        [exec] (Python) {xterm -e python}
+        [exec] (Python [v2.7]) {xterm -e python2.7}
+    [end]
+    [submenu] (Editors)
+        [exec] (AA Fire) {xterm -e aafire -driver slang}
+        [exec] (Neovim) {xterm -e nvim}
+        [exec] (Vi) {xterm -e vi}
+        [exec] (Vim) {xterm -e vim}
+    [end]
+    [submenu] (Games)
+        [submenu] (Adventure)
+            [exec] (Sclient) {sclient}
+        [end]
+        [submenu] (Arcade)
+            [exec] (PacMan) {pacman}
+        [end]
+    [end]
+    [submenu] (Graphics)
+        [exec] (GNU Image Manipulation Program) {gimp-2.10}
+        [exec] (Krita KDE Bitmap Graphics Editor) {krita}
+        [exec] (LibreOffice Draw) {libreoffice --draw}
+        [exec] (The GIMP) {gimp}
+    [end]
+    [submenu] (Multimedia)
+        [exec] (ALSA mixer) {xterm -e alsamixer}
+        [exec] (PulseAudio Volume Control) {pavucontrol}
+        [exec] (Qt V4L2 test Utility) {qv4l2}
+        [exec] (Qt V4L2 video capture utility) {qvidcap}
+        [exec] (SimpleScreenRecorder) {simplescreenrecorder --logfile}
+        [exec] (Spotify) {spotify}
+        [exec] (VLC media player) {vlc}
+        [exec] (VLC media player) {qvlc}
+    [end]
+    [submenu] (Network)
+        [exec] (Avahi SSH Server Browser) {bssh}
+        [exec] (Avahi VNC Server Browser) {bvnc}
+        [exec] (FireFox) {firefox}
+        [exec] (FTP) {xterm -e ftp}
+        [exec] (Mail) {xterm -e mail}
+        [exec] (Talk) {xterm -e talk}
+        [exec] (Telegram Desktop) {telegram-desktop}
+        [exec] (Telnet) {xterm -e telnet}
+        [exec] (TkVNC) {xterm -e tkvnc}
+        [exec] (Transmission) {transmission-gtk}
+        [exec] (W3m) {xterm -e w3m}
+        [exec] (w3m) {xterm -e w3m /usr/share/doc/w3m/MANUAL.html}
+        [exec] (WiFi Radar) {wifi-radar_polkit}
+    [end]
+    [submenu] (Office)
+        [exec] (LibreOffice Calc) {libreoffice --calc}
+        [exec] (LibreOffice Impress) {libreoffice}
+        [exec] (LibreOffice Impress) {libreoffice --impress}
+        [exec] (LibreOffice Math) {libreoffice --math}
+        [exec] (LibreOffice Writer) {libreoffice --writer}
+        [exec] (PostgreSQL Database) {xterm -e psql template1}
+        [exec] (Zathura) {zathura}
+    [end]
+    [submenu] (Science)
+        [exec] (bc) {xterm -e bc}
+        [exec] (dc) {xterm -e dc}
+    [end]
+    [submenu] (Shells)
+        [exec] (File Manager PCManFM) {pcmanfm}
+        [exec] (GIT) {xterm -e git}
+        [exec] (ranger) {xterm -e ranger}
+        [exec] (Tilix) {tilix}
+        [exec] (UXTerm) {uxterm}
+        [exec] (Xterm) {xterm}
+    [end]
+    [submenu] (System)
+        [submenu] (Settings)
+            [submenu] (GNOME)
+                [exec] (Advanced Network Configuration) {nm-connection-editor}
+                [exec] (LightDM GTK+ Greeter settings) {lightdm-gtk-greeter-settings-pkexec}
+            [end]
+            [exec] (Desktop Preferences) {pcmanfm --desktop-pref}
+            [exec] (Manage Printing) {xdg-open http://localhost:631/}
+            [exec] (Preferred Applications) {libfm-pref-apps}
+            [exec] (Qt5 Settings) {qt5ct}
+        [end]
+        [exec] (Avahi Zeroconf Browser) {avahi-discover}
+        [exec] (G-Top) {gtop}
+        [exec] (Htop) {xterm -e htop}
+        [exec] (pstree) {xterm -e /usr/bin/pstree.x11}
+        [exec] (pstree) {xterm -e pstree}
+        [exec] (Pstree) {xterm -e pstree.x11}
+        [exec] (Top) {xterm -e top}
+        [exec] (wmbattery) {wmbattery}
+    [end]
+    [submenu] (Utilities)
+        [exec] (Info) {xterm -e info}
+        [exec] (Xev) {xterm -e xev}
+        [exec] (Xkill) {xkill}
+        [exec] (Xrefresh) {xrefresh}
+        [exec] (Xsetroot) {xsetroot}
+    [end]
+    [separator]
+    [submenu] (FluxBox)
+        [workspaces] (Workspaces)
+        [submenu] (Styles)
+            [stylesdir] (~/.fluxbox/styles)
+        [end]
+        [submenu] (Backgrounds)
+            [wallpapers] (~/.fluxbox/backgrounds) {feh --bg-scale}
+            [wallpapers] (/usr/share/fluxbox/backgrounds) {feh --bg-scale}
+        [end]
+        [config] (Configure)
+        [reconfig] (Reconfig)
+        [restart] (Restart)
+        [separator]
+        [exit] (Exit)
+    [end]
+[end]

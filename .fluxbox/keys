@@ -1,0 +1,131 @@
+#LA CHULETA
+#Mod1 = Alt
+#Mod4 = Super(Win)
+###################################################################################################################################################################################
+
+# click on the desktop to get menus
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+
+# scroll on the desktop to change workspaces
+OnDesktop Mouse4 :PrevWorkspace
+OnDesktop Mouse5 :NextWorkspace
+
+# scroll on the toolbar to change current window
+OnToolbar Mouse4 :PrevWindow {static groups} (iconhidden=no)
+OnToolbar Mouse5 :NextWindow {static groups} (iconhidden=no)
+
+# alt + left/right click to move/resize a window
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindowBorder Move1 :StartMoving
+
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+
+# alt + middle click to lower the window
+OnWindow Mod1 Mouse2 :Lower
+
+# control-click a window's titlebar and drag to attach windows
+OnTitlebar Control Mouse1 :StartTabbing
+
+# double click on the titlebar to shade
+OnTitlebar Double Mouse1 :Shade
+
+# left click on the titlebar to move the window
+OnTitlebar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
+OnTitlebar Move1  :StartMoving
+
+# middle click on the titlebar to lower
+OnTitlebar Mouse2 :Lower
+
+# right click on the titlebar for a menu of options
+OnTitlebar Mouse3 :WindowMenu
+
+# alt-tab
+Mod1 Tab :NextWindow {groups} (workspace=[current])
+Mod1 Shift Tab :PrevWindow {groups} (workspace=[current])
+
+# cycle through tabs in the current window
+Mod4 Tab :NextTab
+Mod4 Shift Tab :PrevTab
+
+# go to a specific tab in the current window
+Mod1 1 :Tab 1
+Mod1 2 :Tab 2
+Mod1 3 :Tab 3
+Mod1 4 :Tab 4
+Mod1 5 :Tab 5
+Mod1 6 :Tab 6
+Mod1 7 :Tab 7
+Mod1 8 :Tab 8
+Mod1 9 :Tab 9
+
+# open a terminal
+Mod4 t :Exec tilix
+
+# open a dialog to run programs
+Control space :Exec rofi -show drun -show-icons
+
+# volume settings, using common keycodes
+# if these don't work, use xev to find out your real keycodes
+176 :Exec amixer sset Master,0 1+
+174 :Exec amixer sset Master,0 1-
+160 :Exec amixer sset Master,0 toggle
+
+# current window commands
+Mod4 q :Close
+
+# Abrir el menu
+Mod1 space :RootMenu
+
+# Bloqueo de sesión
+Control Mod1 Delete :Exec xlock
+
+# Navegador
+Mod4 w :Exec firefox
+
+#Audio controller
+Mod4 a :Exec tilix -e pulsemixer
+
+# change to previous/next workspace
+Control Mod1 Left :PrevWorkspace
+Control Mod1 Right :NextWorkspace
+
+# send the current window and follow it to previous/next workspace
+Control Shift Mod1 Left :TakeToPrevWorkspace
+Control Shift Mod1 Right :TakeToNextWorkspace
+
+# send the current window to a specific workspace
+Mod4 1 :SendToWorkspace 1
+Mod4 2 :SendToWorkspace 2
+Mod4 3 :SendToWorkspace 3
+Mod4 4 :SendToWorkspace 4
+Mod4 5 :SendToWorkspace 5
+Mod4 6 :SendToWorkspace 6
+Mod4 7 :SendToWorkspace 7
+Mod4 8 :SendToWorkspace 8
+Mod4 9 :SendToWorkspace 9
+
+#Brigthness
+F4 :Exec ~/.scripts/brightness.sh 1
+F3 :Exec ~/.scripts/brightness.sh 0
+
+
+##########
+# Tiling #########
+##########
+
+# Movement
+Mod4 Left :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Left}
+Mod4 Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Right}
+Mod4 Up :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Up}
+Mod4 Down :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Bottom}
+
+# Size
+Mod1 Up :ToggleCmd {Maximize} {Restore}
+Mod1 Down :ToggleCmd {ResizeTo 40% 50%} {Restore}
+
+# Minimize
+Mod1 Mod4 Down :ToggleCmd {Minimize} {Restore}

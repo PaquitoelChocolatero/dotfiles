@@ -1,0 +1,8 @@
+ls | grep -o '\w*.png\|\w*.jpg'  #Extract the name of the pictures of the directory
+
+shuf -i 1-$(ls -1 | grep '.png\|.jpg' | wc -l) -n 1  #Pick a number from 1 to the number of pictures
+
+sed -n 'linep' file #Pick a specific line from a file
+
+------------------------------------------------------------------------------------------------------------------
+xdg-open ~/.fluxbox/backgrounds/$(ls ~/.fluxbox/backgrounds | grep -o '\w*.png\|\w*.jpg' | sed -n "$(shuf -i 1-$(ls ~/.fluxbox/backgrounds -1 | grep '.png\|.jpg' | wc -l) -n 1)p")  #Final product
