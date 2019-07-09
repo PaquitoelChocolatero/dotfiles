@@ -70,9 +70,8 @@ Control space :Exec rofi -show drun -show-icons
 
 # volume settings, using common keycodes
 # if these don't work, use xev to find out your real keycodes
-176 :Exec amixer sset Master,0 1+
-174 :Exec amixer sset Master,0 1-
-160 :Exec amixer sset Master,0 toggle
+F11 :Exec amixer sset Master,0 1+
+F10 :Exec amixer sset Master,0 1-
 
 # current window commands
 Mod4 q :Close
@@ -112,6 +111,8 @@ Mod4 9 :SendToWorkspace 9
 F4 :Exec ~/.scripts/brightness.sh 1
 F3 :Exec ~/.scripts/brightness.sh 0
 
+#Get battery level (until automated)
+Mod4 b :Exec notify-send 'Battery is at ' $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | cut -d: -f 2 | tr -d ' ')
 
 ##########
 # Tiling #########
