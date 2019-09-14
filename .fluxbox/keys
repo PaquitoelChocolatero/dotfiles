@@ -63,7 +63,7 @@ Mod1 8 :Tab 8
 Mod1 9 :Tab 9
 
 # open a terminal
-Mod4 t :Exec tilix
+Mod4 Return :Exec tilix
 
 # open a dialog to run programs
 Control space :Exec rofi -show drun -show-icons
@@ -108,25 +108,35 @@ Mod4 8 :SendToWorkspace 8
 Mod4 9 :SendToWorkspace 9
 
 #Brigthness
-F4 :Exec ~/.scripts/brightness.sh 1
-F3 :Exec ~/.scripts/brightness.sh 0
+F4 :Exec ~/.scripts/brightness.sh 1 ; notify-send -i ~/.local/share/icons/sun.png 'Current brigthness: ' $(scale=1; xrandr --verbose | awk '/Brightness/ {print $NF}')
+
+F3 :Exec ~/.scripts/brightness.sh 0 ; notify-send -i ~/.local/share/icons/sun.png 'Current brigthness: ' $(scale=1; xrandr --verbose | awk '/Brightness/ {print $NF}')
 
 #Get battery level (until automated)
-Mod4 b :Exec notify-send 'Battery is at ' $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | cut -d: -f 2 | tr -d ' ')
+Mod4 b :Exec notify-send 'Battery is at: ' $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | cut -d: -f 2 | tr -d ' ') --icon=battery
+
+Mod4 h :Exec tilix -e htop
 
 ##########
 # Tiling #########
 ##########
 
 # Movement
-Mod4 Left :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Left}
-Mod4 Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Right}
-Mod4 Up :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Up}
-Mod4 Down :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Bottom}
+Mod4 Shift Left :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Left}
+Mod4 Shift Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Right}
+Mod4 Shift Up :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Up}
+Mod4 Shift Down :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Bottom}
 
 # Size
 Mod1 Up :ToggleCmd {Maximize} {Restore}
 Mod1 Down :ToggleCmd {ResizeTo 40% 50%} {Restore}
 
-# Minimize
-Mod1 Mod4 Down :ToggleCmd {Minimize} {Restore}
+#################
+# Rotate screen #
+#################
+
+#You have to press the arrow where the top will be placed
+Mod4 Mod1 Left :Exec xrandr --output eDP1 --rotate left
+Mod4 Mod1 Right :Exec xrandr --output eDP1 --rotate right
+Mod4 Mod1 Up :Exec xrandr --output eDP1 --rotate normal
+Mod1 Mod4 Down :Exec xrandr --output eDP1 --rotate inverted
