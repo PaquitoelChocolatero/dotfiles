@@ -88,6 +88,9 @@ Mod4 w :Exec firefox
 #Audio controller
 Mod4 a :Exec tilix -e pulsemixer
 
+#Note taking app
+Mod4 n :Exec tilix -e cd; ./Documents/Notes/Write
+
 # change to previous/next workspace
 Control Mod1 Left :PrevWorkspace
 Control Mod1 Right :NextWorkspace
@@ -108,9 +111,9 @@ Mod4 8 :SendToWorkspace 8
 Mod4 9 :SendToWorkspace 9
 
 #Brigthness
-F4 :Exec ~/.scripts/brightness.sh 1 ; notify-send -i ~/.local/share/icons/sun.png 'Current brigthness: ' $(scale=1; xrandr --verbose | awk '/Brightness/ {print $NF}')
+F4 :Exec ~/.scripts/brightness.sh 1
 
-F3 :Exec ~/.scripts/brightness.sh 0 ; notify-send -i ~/.local/share/icons/sun.png 'Current brigthness: ' $(scale=1; xrandr --verbose | awk '/Brightness/ {print $NF}')
+F3 :Exec ~/.scripts/brightness.sh 0
 
 #Get battery level (until automated)
 Mod4 b :Exec notify-send 'Battery is at: ' $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | cut -d: -f 2 | tr -d ' ') --icon=battery

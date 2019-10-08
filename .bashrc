@@ -60,6 +60,7 @@ alias chao='halt -p'
 alias ls='ls -lati --color'
 alias py='python3'
 alias sp='sudo pacman'
+alias apuntes='cd ~/Documentos/Notes/3_1/Terminadas'
 
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
