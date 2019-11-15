@@ -1,0 +1,44 @@
+{
+	"name": "gmpl",
+	"displayName": "GMPL",
+	"description": "",
+	"version": "1.0.0",
+	"publisher": "steffenk1337",
+	"repository": {
+		"url": "https://github.com/FastDeath/vscode-gmpl"
+	},
+	"engines": {
+		"vscode": "^1.38.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "gmpl",
+				"aliases": [
+					"GNU MathProg",
+					"gmpl"
+				],
+				"extensions": [
+					".gmpl",
+					".mod"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "gmpl",
+				"scopeName": "source.gmpl",
+				"path": "./syntaxes/gmpl.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "876687aa-3a4a-468b-ab53-1dc1bffefe78",
+		"publisherId": "7f7d72b7-198d-4d08-bece-fa7d4513251d",
+		"publisherDisplayName": "Steffen K."
+	}
+}

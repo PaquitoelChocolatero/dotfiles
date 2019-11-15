@@ -1,0 +1,12 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "interface-name": [
+      false
+    ],
+    "no-conditional-assignment": false,
+    "no-reference": false,
+    "no-string-literal": false,
+    "object-literal-sort-keys": false
+  }
+}

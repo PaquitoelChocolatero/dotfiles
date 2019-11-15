@@ -1,0 +1,113 @@
+{
+	"name": "latex-support",
+	"version": "3.1.0",
+	"displayName": "LaTeX language support",
+	"description": "LaTeX language support for Visual Studio Code",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ProAdd-ons/vscode-LaTeX-support"
+	},
+	"license": "MIT",
+	"icon": "images/icon.png",
+	"publisher": "torn4dom4n",
+	"categories": [
+		"Programming Languages"
+	],
+	"engines": {
+		"vscode": "*"
+	},
+	"keywords": [
+		"BibTeX",
+		"LaTeX",
+		"TeX"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "bibtex",
+				"aliases": [
+					"BibTeX"
+				],
+				"extensions": [
+					"bib"
+				],
+				"configuration": "./settings/BibTeX-configuration.json"
+			},
+			{
+				"id": "latex",
+				"aliases": [
+					"LaTeX"
+				],
+				"extensions": [
+					"bbx",
+					"cbx",
+					"cls",
+					"ltx",
+					"lco",
+					"sty",
+					"tex",
+					"tikz"
+				],
+				"configuration": "./settings/LaTeX-configuration.json"
+			},
+			{
+				"id": "tex",
+				"aliases": [
+					"TeX"
+				],
+				"extensions": [
+					"dtx",
+					"ins"
+				],
+				"configuration": "./settings/TeX-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "bibtex",
+				"scopeName": "text.bibtex",
+				"path": "./grammars/BibTeX.json"
+			},
+			{
+				"language": "latex",
+				"scopeName": "text.tex.latex",
+				"path": "./grammars/LaTeX.json",
+				"embeddedLanguages": {
+					"source.asymptote": "asymptote",
+					"source.cpp": "cpp",
+					"source.css": "css",
+					"source.dot": "dot",
+					"source.gnuplot": "gnuplot",
+					"text.html": "html",
+					"source.java": "java",
+					"source.js": "js",
+					"source.lua": "lua",
+					"source.python": "python",
+					"source.scala": "scala",
+					"text.xtml": "xtml",
+					"source.yaml": "yaml"
+				}
+			},
+			{
+				"language": "tex",
+				"scopeName": "text.tex",
+				"path": "./grammars/TeX.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "latex",
+				"path": "./snippets/LaTeX.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"fast-plist": "0.1.2",
+		"cson-parser": "4.0.2"
+	},
+	"__metadata": {
+		"id": "6edd1f7d-7d66-42ee-a32f-62c990bcfa19",
+		"publisherId": "70d63b9d-37a5-4d35-ae69-e3ea02c437e0",
+		"publisherDisplayName": "Long Nhat Nguyen"
+	}
+}

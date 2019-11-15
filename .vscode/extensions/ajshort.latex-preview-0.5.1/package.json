@@ -1,0 +1,140 @@
+{
+	"name": "latex-preview",
+	"displayName": "LaTeX Preview",
+	"description": "Compilation and embedded preview of LaTeX documents",
+	"icon": "media/icon.png",
+	"version": "0.5.1",
+	"publisher": "ajshort",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ajshort/vscode-latex-preview.git"
+	},
+	"engines": {
+		"vscode": "^1.6.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"keywords": [
+		"latex",
+		"tex",
+		"preview"
+	],
+	"activationEvents": [
+		"onCommand:latex-preview.createBuildTask",
+		"onCommand:latex-preview.showPreview",
+		"onCommand:latex-preview.showPreviewToSide",
+		"onCommand:latex-preview.showInPreview",
+		"onCommand:latex-preview.showSource"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Latex Preview",
+			"properties": {
+				"latex-preview.command": {
+					"type": "string",
+					"description": "The LaTeX command to use (pdflatex, xelatex, latexmk)",
+					"default": "pdflatex"
+				},
+				"latex-preview.filename": {
+					"type": "string",
+					"description": "The file to compile for the preview. It not set, uses the current file"
+				},
+				"latex-preview.updateAllOnSave": {
+					"type": "boolean",
+					"description": "Whether to update all previews on save, or just the current document",
+					"default": true
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "latex-preview.createBuildTask",
+				"category": "LaTeX",
+				"title": "Create Build Task"
+			},
+			{
+				"command": "latex-preview.showPreview",
+				"category": "LaTeX",
+				"title": "Open Preview"
+			},
+			{
+				"command": "latex-preview.showPreviewToSide",
+				"category": "LaTeX",
+				"title": "Open Preview to the Side"
+			},
+			{
+				"command": "latex-preview.showInPreview",
+				"category": "LaTeX",
+				"title": "Show in Preview"
+			},
+			{
+				"command": "latex-preview.showSource",
+				"category": "LaTeX",
+				"title": "Show Source"
+			},
+			{
+				"command": "latex-preview.showCompileOutput",
+				"category": "LaTeX",
+				"title": "Show Preview Compile Output"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "resourceLangId == latex",
+					"command": "latex-preview.showInPreview",
+					"group": "navigation"
+				}
+			],
+			"editor/title": [
+				{
+					"when": "editorLangId == latex",
+					"command": "latex-preview.showPreview",
+					"alt": "latex-preview.showPreviewToSide",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceScheme == latex-preview",
+					"command": "latex-preview.showSource",
+					"group": "navigation"
+				}
+			],
+			"explorer/context": [
+				{
+					"when": "resourceLangId == latex",
+					"command": "latex-preview.showPreview",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"compile": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"dependencies": {
+		"pdfjs-dist": "1.6.329",
+		"tmp": "0.0.30",
+		"ws": "^1.1.1"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.32",
+		"@types/node": "^6.0.40",
+		"@types/pdf": "0.0.31",
+		"@types/tmp": "0.0.31",
+		"@types/ws": "0.0.36",
+		"mocha": "^2.3.3",
+		"typescript": "^2.0.3",
+		"vscode": "^1.0.0"
+	},
+	"__metadata": {
+		"id": "718b0313-9e79-4968-9579-6a8a4d4cb605",
+		"publisherId": "99322757-79c0-440b-b60f-3f7a2f7f24e6",
+		"publisherDisplayName": "ajshort"
+	}
+}

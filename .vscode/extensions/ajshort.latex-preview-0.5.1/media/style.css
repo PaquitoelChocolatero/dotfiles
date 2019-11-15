@@ -1,0 +1,69 @@
+body {
+  font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto 10px auto;
+  cursor: crosshair;
+}
+
+#zoom {
+  background: #1e1e1e;
+  border: 1px solid #403F3F;
+  float: left;
+  left: 15px;
+  line-height: 20px;
+  padding: 6px;
+  position: fixed;
+  top: 15px;
+}
+
+#zoom .icon {
+  color: #DDD;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+#zoom input {
+  background: #3C3C3C;
+  border: 1px solid #3C3C3C;
+  color: #CCC;
+  width: 60px;
+}
+
+#zoom button {
+  background: #007ACC;
+  border: 1px solid #3F8BCE;
+  cursor: pointer;
+  display: inline-block;
+  color: #FFF;
+  font-weight: bold;
+  height: 20px;
+  margin-left: 2px;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 20px;
+}
+
+#zoom button:focus, #zoom button:hover {
+  background-color: #3F8BCE;
+}
+
+#compile-error {
+  background: #A94442;
+  border: 1px solid #76110F;
+  color: #FFF;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+  padding:10px;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+}
+
+#compile-error:focus, #compile-error:hover {
+  background: #76110F;
+}
