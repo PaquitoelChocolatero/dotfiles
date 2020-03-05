@@ -1,0 +1,16 @@
+npm: /usr/lib/node_modules/npm/node_modules/os-locale/node_modules/cross-spawn/package.json exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/os-locale/node_modules/execa/index.js exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/os-locale/node_modules/execa/lib/errname.js exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/os-locale/node_modules/execa/lib/stdio.js exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/os-locale/node_modules/execa/license exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/os-locale/node_modules/execa/package.json exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/os-locale/node_modules/execa/readme.md exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-defer/index.js exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-defer/license exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-defer/package.json exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-defer/readme.md exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-is-promise/index.d.ts exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-is-promise/index.js exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-is-promise/license exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-is-promise/package.json exists in filesystem
+npm: /usr/lib/node_modules/npm/node_modules/p-is-promise/readme.md exists in filesystem

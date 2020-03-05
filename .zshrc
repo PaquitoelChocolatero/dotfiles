@@ -52,13 +52,6 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
-
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
@@ -85,6 +78,6 @@ alias adios='halt -p'
 alias chao='halt -p'
 alias ls='exa -lahG --git'
 alias py='python3'
-alias update='sudo pacman -Syyu; yay -Syyu'
+alias update='bash ~/.scripts/update.sh'
 
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
