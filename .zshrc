@@ -66,7 +66,14 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 #cd -> ls
-cs() { cd "$@" && exa -lahG --git; }
+function chpwd(){
+  emulate -L zsh
+  exa -lahG --git
+  if [ -d .git ]; then
+    echo "Current directory is a repository...";
+    git pull;
+  fi;
+}
 
 # Aliases
 alias pls='sudo'
